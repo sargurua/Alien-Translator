@@ -1,3 +1,4 @@
+<%# Div container holds display elements, the title and translation output. %>
 <div class="display-container">
     <h1 class="title">Alien Translator</h1>
     <div class="display">
@@ -11,6 +12,8 @@
         <% end %>
     </div>
 </div>
+
+<%# Form to submit english phrase to controller. Form sends string and authenticity token %>
 <div class="input">
     <form class="input-form" class="translate-phrase" action="/translate" method="post">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -22,6 +25,7 @@
     </form>
 </div>
 
+<%# Side Navbar to include up to 10 past searches. If clicked display will show English and Gorbyoyo on display area. %>
 <nav class="main-menu">
     <ul>
         <li>

@@ -39,9 +39,17 @@ body {
     border-radius: 15px 50px 30px;
     border: 3px double grey;
     word-break: break-all;
+    overflow-y: auto;
 }
 
 .display h2{
+    color: #6CC417;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: underline solid #6CC417;
+}
+
+.display h3{
     color: #6CC417;
     margin-left: 20px;
     margin-right: 20px;

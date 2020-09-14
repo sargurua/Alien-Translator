@@ -1,4 +1,6 @@
 class Translation < ApplicationRecord
+    validates_presence_of :english
+    validates_presence_of :gorbyoyo
 
     def self.translate(input_string)
 

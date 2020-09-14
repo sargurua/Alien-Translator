@@ -4,9 +4,10 @@
         <% if @previous_translation == nil %>
             <h2>No previous translation</h2>
         <% else %>
-            <h2 class="display-text"><%= @previous_translation.gorbyoyo %></h2>
-            <br />
-            <h2 class="display-text">(<%= @previous_translation.english %>)</h2>
+            <h2>Gorbyoyo</h2>
+            <h3 class="display-text"><%= @previous_translation.gorbyoyo %></h3>
+            <h2>English</h2>
+            <h3 class="display-text"><%= @previous_translation.english %></h3>
         <% end %>
     </div>
 </div>
@@ -20,3 +21,37 @@
         <input type="submit">
     </form>
 </div>
+
+<nav class="main-menu">
+    <ul>
+        <li>
+            <i class="fa fa-bars fa-2x"></i>
+            <span class="nav-text">
+                Past Searches
+            </span>
+        </li>
+        <% if @translations.length > 10 %>
+            <% (1..10).each do |i| %>
+                <li class="has-subnav">
+                    <%= link_to past_search_path_url(:id => @translations[@translations.length - i].id), method: :post do%>
+                        <i class="fa fa-microphone fa-2x"></i>
+                        <span class="nav-text">
+                            <%= @translations[@translations.length - i].english %>
+                        </span>
+                    <% end %>
+                </li>
+            <% end %>
+        <% else %>
+            <% (1..@translations.length).each do |i| %>
+                <li class="has-subnav">
+                    <%= link_to past_search_path_url(:id => @translations[@translations.length - i].id), method: :post do%>
+                        <i class="fa fa-microphone fa-2x"></i>
+                        <span class="nav-text">
+                            <%= @translations[@translations.length - i].english %>
+                        </span>
+                    <% end %>
+                </li>
+            <% end %>
+        <% end %>
+    </ul>                
+</nav>

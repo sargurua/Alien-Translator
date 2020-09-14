@@ -55,3 +55,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Http requests gem
 gem 'httparty'
+
+gem 'rspec'
+gem 'rspec-rails'
+
+gem 'sweetify'

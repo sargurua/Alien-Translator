@@ -1,0 +1,22 @@
+<div class="display-container">
+    <h1 class="title">Alien Translator</h1>
+    <div class="display">
+        <% if @previous_translation == nil %>
+            <h2>No previous translation</h2>
+        <% else %>
+            <h2 class="display-text"><%= @previous_translation.gorbyoyo %></h2>
+            <br />
+            <h2 class="display-text">(<%= @previous_translation.english %>)</h2>
+        <% end %>
+    </div>
+</div>
+<div class="input">
+    <form class="input-form" class="translate-phrase" action="/translate" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <p>Input a phrase here to translate to Gorbyoyo.</p>
+        <div></div>
+        <input type="text" name="translation[english]" id="english-input">
+        <div></div>
+        <input type="submit">
+    </form>
+</div>
